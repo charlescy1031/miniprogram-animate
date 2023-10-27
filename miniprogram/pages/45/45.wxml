@@ -1,0 +1,58 @@
+<view>
+	<view class="title" bindtap="prizedraw">
+		<text>幸运大抽奖</text>
+	</view>
+	<view class="prizedraw">
+		<view class="container">
+			<view class="prizedraw-box">
+				<image class="arrow arrow-left" src="/image/45/Polygon10.svg" mode="" />
+				<image class="rectange" src="/image/45/Rectangle4626.svg" mode="" />
+				<view class="listbox">
+					<view class="imglist" style="{{myClassStyleA}}">
+						<image class="imglist-item" wx:for="{{imageList}}" wx:key="unique" src="{{item}}" mode="" />
+					</view>
+				</view>
+
+			</view>
+
+			<view class="prizedraw-box">
+				<image class="rectange" src="/image/45/Rectangle4626.svg" mode="" />
+				<view class="listbox">
+					<view class="imglist" style="{{myClassStyleB}}">
+						<image class="imglist-item" wx:for="{{imageList}}" wx:key="unique" src="{{item}}" mode="" />
+					</view>
+				</view>
+			</view>
+
+			<view class="prizedraw-box">
+				<image class="arrow arrow-right" src="/image/45/Polygon11.svg" mode="" />
+				<image class="rectange" src="/image/45/Rectangle4626.svg" mode="" />
+				<view class="listbox">
+					<view class="imglist" style="{{myClassStyleC}}">
+						<image class="imglist-item" wx:for="{{imageList}}" wx:key="unique" src="{{item}}" mode="" />
+					</view>
+				</view>
+			</view>
+
+		</view>
+
+
+	</view>
+	<view class="Prize-title2">奖池</view>
+
+
+	<view class="Prize-box">
+		<view class="Prize-item" wx:for="{{lists}}">
+			<image class="Prize-picture" src="{{item.src}}" mode="" />
+			<text class="Prize-text">{{item.text}}</text>
+		</view>
+	</view>
+	<view class="Prize-share">
+
+
+		分享
+<image src="/miniprogram/image/45/Rectangle1622.png" mode=""/>
+
+
+	</view>
+</view>

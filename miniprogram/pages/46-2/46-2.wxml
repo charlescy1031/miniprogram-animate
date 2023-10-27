@@ -1,0 +1,6 @@
+<view class="container log-list">
+    <image class="log-imga" src="/image/vectora.svg" />
+    <image class="log-imgb" src="/image/vectorb.svg" />
+    <image class="log-imgc" src="/image/vectorc.svg" />
+</view>
+<image src="/image/Vector.png" mode="aspectFill" />

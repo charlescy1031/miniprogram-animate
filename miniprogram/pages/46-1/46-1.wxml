@@ -1,0 +1,8 @@
+<view class="" animation="{{animationData}}"  id="viewId" >
+    <view class="container log-list" bindtap="clickfn">
+        <image class="log-imga" src="/image/46-1/vectora.svg" />
+        <image class="log-imgb" src="/image/46-1/vectorb.svg" />
+        <image class="log-imgc" src="/image/46-1/vectorc.svg" />
+    </view>
+    <image style="{{myClassStyle}}" src="/image/46-1/Vector.png"  />
+</view>
