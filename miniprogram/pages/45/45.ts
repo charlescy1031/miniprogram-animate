@@ -63,46 +63,57 @@ Page({
 		}
 	},
 	prizedraw(e: any) {
+        // 抽奖函数
 		// const query = wx.createSelectorQuery();
 		// const element = query.select('.imglist')
-		let count = 0
-		let a = setInterval(() => {
-			count += -65
+		let countfast = 0,countslow=0
+		let countslowInterval = setInterval(() => {
+			countslow += -65
 			this.setData({
-				myClassStyleA: `margin-top:${count}px;`,
-				myClassStyleB: `margin-top:${count}px;`,
-				myClassStyleC: `margin-top:${count}px;`,
+				myClassStyleA: `margin-top:${countslow}px;`,
+				myClassStyleC: `margin-top:${countslow}px;`,
 			})
-			if (count < -2880) {
-				clearInterval(a)
+			if (countslow < -2880) {
+				clearInterval(countslowInterval)
 				this.setData({
 					regulateNumberA: Math.floor(Math.random() * -90),
-					regulateNumberB: Math.floor(Math.random() * -90),
 					regulateNumberC: Math.floor(Math.random() * -90)
 				})
 				this.setData({
 					realScrollA: this.gettrueNumber() + this.data.regulateNumberA,
-					realScrollB: this.gettrueNumber() + this.data.regulateNumberB,
 					realScrollC: this.gettrueNumber() + this.data.regulateNumberC,
 					myClassStyleA: `margin-top:${this.data.realScrollA}px;`,
-					myClassStyleB: `margin-top:${this.data.realScrollA}px;`,
 					myClassStyleC: `margin-top:${this.data.realScrollC}px;`,
 				})
 				this.contrustorInterval('A', this.data.realScrollA, this.data.regulateNumberA)
-				this.contrustorInterval('B', this.data.realScrollB, this.data.regulateNumberB)
 				this.contrustorInterval('C', this.data.realScrollC, this.data.regulateNumberC)
 			}
-		}, 40)
-
-
+        }, 40)
+        let countfastInterval = setInterval(() => {
+			countfast += -25
+			this.setData({
+				myClassStyleB: `margin-top:${countfast}px;`,
+			})
+			if (countslow < -2880) {
+				clearInterval(countfastInterval)
+				this.setData({
+					regulateNumberB: Math.floor(Math.random() * -90),
+				})
+				this.setData({
+					realScrollB: this.gettrueNumber() + this.data.regulateNumberB,
+					myClassStyleB: `margin-top:${this.data.realScrollB}px;`,
+				})
+				this.contrustorInterval('B', this.data.realScrollB, this.data.regulateNumberB)
+			}
+		}, 20)
 	},
 	contrustorInterval(type: any, realScroll: number, regulateNumber: number) {
+        // 抽奖卡偏移量回归函数
 		let differencrValue = Math.abs(regulateNumber)
 		let count = 0
 		let backPositionFn = setInterval(() => {
 			if (count < differencrValue) {
 				if (type === 'A') {
-
 					this.setData({
 						myClassStyleA: `margin-top:${realScroll + count}px;`,
 					})
@@ -122,6 +133,7 @@ Page({
 		}, 10)
 	},
 	gettrueNumber(): number {
+        // 随机数量函数
 		let a = Math.floor(Math.random() * 10) * -90;
 		return a < -630 ? this.gettrueNumber() : a
 	},
