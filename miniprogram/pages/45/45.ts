@@ -61,7 +61,14 @@ Page({
 				canIUseGetUserProfile: true
 			})
 		}
-	},
+    },
+    onShow: function () {
+        if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+            this.getTabBar().setData({
+                selected: 1
+            })
+        }
+    },
 	prizedraw(e: any) {
         // 抽奖函数
 		// const query = wx.createSelectorQuery();

@@ -1,4 +1,4 @@
-<view>
+<view class="page">
     <view class="title" >
         <text>幸运大抽奖</text>
     </view>

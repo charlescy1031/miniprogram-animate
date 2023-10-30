@@ -1,0 +1,15 @@
+/* nav.wxss */
+.topView {
+  position: relative;
+  z-index: 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+.topView .topBtn {
+  width: 500rpx;
+  border: none;
+  font-size: 12px;
+  background-color: rgb(255, 255, 255, .2);
+  color: #fff;
+}

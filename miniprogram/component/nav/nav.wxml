@@ -1,0 +1,6 @@
+<!--上内边距设置为胶囊的上内边距，内容所需的高度再更换-->
+<view style="padding-top:{{meum.top*2.9}}rpx; padding-bottom: 26rpx;" class="topView" wx:if="{{showNav}}">
+  <!--此处书写自定义内容-->
+  <!--此处我将按钮的高设为胶囊的高，加上圆角-->
+  <van-button icon="search" custom-class="topBtn" custom-style="height:{{meum.height*2}}rpx; border-radius: {{meum.height}}rpx;">Weixin</van-button>
+</view>

@@ -1,9 +1,9 @@
-
 image {
   width: 100vw;
   height: 100vh;
   // border: 1px solid red;
 }
+
 .log-list {
   position: absolute;
   width: 100%;
@@ -11,11 +11,13 @@ image {
   align-items: center;
   justify-content: center;
 }
+
 .log-imga {
   width: 230.775px;
   height: 44.1px;
   flex-shrink: 0;
 }
+
 .log-imgb {
   width: 200px;
   height: 2px;
@@ -23,28 +25,14 @@ image {
   margin-bottom: 12.9px;
   flex-shrink: 0;
 }
+
 .log-imgc {
   width: 201.924px;
   height: 18.7px;
   flex-shrink: 0;
 }
 
-
-.bounce {
-    animation: bounce .7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transform-origin: center bottom;
-  }
-  
-  @keyframes bounce {
-    0%, 75%, 100% {
-      transform: translateY(0);
-    }
-  
-    30% {
-      transform: translateY(-20px);
-    }
-  
-    60% {
-      transform: translateY(-10px);
-    }
-  }
+.animation-box {
+  position: absolute;
+  z-index: 99999;
+}

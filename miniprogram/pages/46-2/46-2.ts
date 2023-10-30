@@ -18,7 +18,13 @@ Page({
     interval: 2000,
     duration: 500,
   },
-
+  onShow: function () {
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+        this.getTabBar().setData({
+            selected: 3
+        })
+    }
+},
   changeIndicatorDots() {
     this.setData({
       indicatorDots: !this.data.indicatorDots,
