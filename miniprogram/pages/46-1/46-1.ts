@@ -49,7 +49,7 @@ Page({
             delay: 0,
             transformOrigin: '72% 80% '
         })
-        console.log(this.data.meum.height)
+        // console.log(this.data.meum.height)
         let calcuHeight = 100;
         let setIntervalNum = 6;
         let blackBgToWhiteInterval = setInterval(() => {
@@ -82,33 +82,8 @@ Page({
         setTimeout(() => {
             if (typeof this.getTabBar === 'function' && this.getTabBar()) {
                 this.getTabBar().setData({
+                    ['list[3].iconPath']: "/image/tabBar/24dot.svg",
                     selected: 0,
-                    list: [{
-                        pagePath: "/pages/46-1/46-1",
-                        iconPath: "/image/tabBar/24.svg",
-                        selectedIconPath: "/image/tabBar/24selected.svg",
-                        text: "46-1"
-                    }, {
-                        pagePath: "/pages/45/45",
-                        iconPath: "/image/tabBar/24.svg",
-                        selectedIconPath: "/image/tabBar/24selected.svg",
-                        text: "45"
-                    }, {
-                        pagePath: "/pages/35/35",
-                        iconPath: "/image/tabBar/24.svg",
-                        selectedIconPath: "/image/tabBar/24selected.svg",
-                        text: "35"
-                    }, {
-                        pagePath: "/pages/46-2/46-2",
-                        iconPath: "/image/tabBar/24dot.svg",
-                        selectedIconPath: "/image/tabBar/24selected.svg",
-                        text: "46-2"
-                    }, {
-                        pagePath: "/pages/46-3/46-3",
-                        iconPath: "/image/tabBar/24.svg",
-                        selectedIconPath: "/image/tabBar/24selected.svg",
-                        text: "46-3"
-                    }]
                 })
             }
         }, 1500)

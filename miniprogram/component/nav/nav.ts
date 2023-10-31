@@ -8,6 +8,10 @@ Component({
         meum: wx.getMenuButtonBoundingClientRect(),
     },
     properties: {
+        navTitle: {
+            type: String,
+            value: 'xiaosi'
+        },
         showNav: {
             type: Boolean,
             value: true
