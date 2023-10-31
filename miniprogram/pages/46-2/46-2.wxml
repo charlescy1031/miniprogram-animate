@@ -1,6 +1,17 @@
-<view class="container log-list">
-    <image class="log-imga" src="/image/vectora.svg" />
-    <image class="log-imgb" src="/image/vectorb.svg" />
-    <image class="log-imgc" src="/image/vectorc.svg" />
+<view>
+    <view class="blackbg" style="{{myClassStyleBg}}">
+        <nav showNav="{{showNav}}"></nav>
+    </view>
+
+    <view class="animation-box" animation="{{animationData}}" id="viewId" 
+    style="background-image: url(../../image/46-1/Vector.png);background-size: 100% 100%;"
+    >
+        <view class="container log-list" bindtap="clickfn">
+            <image class="log-imga" src="/image/46-1/Vectora.svg" />
+            <image class="log-imgb" src="/image/46-1/Vectorb.svg" />
+            <image class="log-imgc" src="/image/46-1/Vectorc.svg" />
+        </view>
+        <image style="{{myClassStyle}}" src="/image/46-1/Vector.png" />
+    </view>
+
 </view>
-<image src="/image/Vector.png" mode="aspectFill" />

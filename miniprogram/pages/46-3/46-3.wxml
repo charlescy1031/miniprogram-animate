@@ -1,23 +1,17 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
-      </view>
-      <open-data type="userNickName"></open-data>
-    </block>
-    <block wx:elif="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view>
+    <view class="blackbg" style="{{myClassStyleBg}}">
+        <nav showNav="{{showNav}}"></nav>
+    </view>
+
+    <view class="animation-box" animation="{{animationData}}" id="viewId" 
+    style="background-image: url(../../image/46-1/Vector.png);background-size: 100% 100%;"
+    >
+        <view class="container log-list" bindtap="clickfn">
+            <image class="log-imga" src="/image/46-1/Vectora.svg" />
+            <image class="log-imgb" src="/image/46-1/Vectorb.svg" />
+            <image class="log-imgc" src="/image/46-1/Vectorc.svg" />
+        </view>
+        <image style="{{myClassStyle}}" src="/image/46-1/Vector.png" />
+    </view>
+
 </view>

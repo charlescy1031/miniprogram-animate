@@ -1,56 +1,143 @@
 // index.ts
 // 获取应用实例
-const app = getApp<IAppOption>()
+// const app = getApp<IAppOption>()
 
 Page({
+    onShareAppMessage() {
+        return {
+            title: "swiper",
+            path: "page/component/pages/swiper/swiper",
+        };
+    },
+
     data: {
-        motto: 'Hello World',
-        userInfo: {},
-        hasUserInfo: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo'),
-        canIUseGetUserProfile: false,
-        canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+        meum: wx.getMenuButtonBoundingClientRect(),
+        background: ["demo-text-1", "demo-text-2", "demo-text-3"],
+        indicatorDots: true,
+        vertical: false,
+        autoplay: false,
+        interval: 2000,
+        duration: 500,
+        myClassStyle: "",
+        showNav: false
     },
-    // 事件处理函数
-    bindViewTap() {
-        wx.navigateTo({
-            url: '../logs/logs',
-        })
+
+    changeIndicatorDots() {
+        this.setData({
+            indicatorDots: !this.data.indicatorDots,
+        });
     },
-    onLoad() {
-        // @ts-ignore
-        if (wx.getUserProfile) {
-            this.setData({
-                canIUseGetUserProfile: true
-            })
-        }
+
+    changeAutoplay() {
+        this.setData({
+            autoplay: !this.data.autoplay,
+        });
     },
     onShow: function () {
         if (typeof this.getTabBar === 'function' && this.getTabBar()) {
             this.getTabBar().setData({
-                selected: 4
+                selected: 0
             })
         }
     },
-    getUserProfile() {
-        // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-        wx.getUserProfile({
-            desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-            success: (res) => {
-                console.log(res)
+    clickfn() {
+        // const query = wx.createSelectorQuery();
+        // const element = query.select('#viewId');
+        let animationA = wx.createAnimation({
+            duration: 1500,
+            timingFunction: 'linear',
+            delay: 0,
+            transformOrigin: '72% 80% '
+        })
+        console.log(this.data.meum.height)
+        let calcuHeight = 100;
+        let setIntervalNum = 6;
+        let blackBgToWhiteInterval = setInterval(() => {
+            if (calcuHeight <= 10) {
                 this.setData({
-                    userInfo: res.userInfo,
-                    hasUserInfo: true
+                    myClassStyleBg: 'height: 9.6vh;background:#fff;'
+                })
+                clearInterval(blackBgToWhiteInterval)
+            } else if (calcuHeight < 20) {
+                setIntervalNum = 12;
+                calcuHeight -= 4.56;
+                this.setData({
+                    myClassStyleBg: `height: ${calcuHeight}vh;background:#404040;`
+                })
+            } else {
+                calcuHeight -= 2.28;
+                this.setData({
+                    myClassStyleBg: `height: ${calcuHeight}vh;background:#404040;`
                 })
             }
-        })
-    },
-    getUserInfo(e: any) {
-        // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-        console.log(e)
+
+        }, setIntervalNum)
+        // 缩小动画
+        animationA.scaleX(0.128).scaleY(0.07196).opacity(1).step({ delay: 100, duration: 400 })
+        // 展示navbar
+        this.setData({ showNav: true })
+        // 消失动画
+        animationA.translateY(600).opacity(1).step({ delay: 600, duration: 200 })
+        animationA.scale(0).opacity(0).step({ duration: 200 })
+        setTimeout(() => {
+            if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+                this.getTabBar().setData({
+                    selected: 0,
+                    list: [{
+                        pagePath: "/pages/46-1/46-1",
+                        iconPath: "/image/tabBar/24.svg",
+                        selectedIconPath: "/image/tabBar/24selected.svg",
+                        text: "46-1"
+                    }, {
+                        pagePath: "/pages/45/45",
+                        iconPath: "/image/tabBar/24.svg",
+                        selectedIconPath: "/image/tabBar/24selected.svg",
+                        text: "45"
+                    }, {
+                        pagePath: "/pages/35/35",
+                        iconPath: "/image/tabBar/24.svg",
+                        selectedIconPath: "/image/tabBar/24selected.svg",
+                        text: "35"
+                    }, {
+                        pagePath: "/pages/46-2/46-2",
+                        iconPath: "/image/tabBar/24dot.svg",
+                        selectedIconPath: "/image/tabBar/24selected.svg",
+                        text: "46-2"
+                    }, {
+                        pagePath: "/pages/46-3/46-3",
+                        iconPath: "/image/tabBar/24.svg",
+                        selectedIconPath: "/image/tabBar/24selected.svg",
+                        text: "46-3"
+                    }]
+                })
+            }
+        }, 1500)
+        // 将动画导出到页面
         this.setData({
-            userInfo: e.detail.userInfo,
-            hasUserInfo: true
+            animationData: animationA.export()
         })
-    }
-})
+        setTimeout(() => {
+            this.setData({
+                myClassStyle: 'border-radius:60px;',
+            })
+        }, 600)
+
+
+    },
+    onReachBottom: function () {
+        setTimeout(() => {
+            this.clickfn()
+        }, 1000)
+    },
+    intervalChange(e: any) {
+        this.setData({
+            interval: e.detail.value,
+        });
+    },
+
+    durationChange(e: any) {
+        this.setData({
+            duration: e.detail.value,
+        });
+    },
+});

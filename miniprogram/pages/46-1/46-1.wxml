@@ -11,7 +11,7 @@
             <image class="log-imgb" src="/image/46-1/Vectorb.svg" />
             <image class="log-imgc" src="/image/46-1/Vectorc.svg" />
         </view>
-        <!-- <image style="{{myClassStyle}}" src="/image/46-1/Vector.png" /> -->
+        <image style="{{myClassStyle}}" src="/image/46-1/Vector.png" />
     </view>
 
 </view>

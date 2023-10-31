@@ -1,19 +1,39 @@
-/**index.wxss**/
-.userinfo {
+image {
+  width: 100vw;
+  height: 100vh;
+  // border: 1px solid red;
+}
+
+.log-list {
+  position: absolute;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  color: #aaa;
+  justify-content: center;
 }
 
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.log-imga {
+  width: 230.775px;
+  height: 44.1px;
+  flex-shrink: 0;
 }
 
-.usermotto {
-  margin-top: 200px;
+.log-imgb {
+  width: 200px;
+  height: 2px;
+  margin-top: 16.9px;
+  margin-bottom: 12.9px;
+  flex-shrink: 0;
+}
+
+.log-imgc {
+  width: 201.924px;
+  height: 18.7px;
+  flex-shrink: 0;
+}
+
+.animation-box {
+  position: absolute;
+  z-index: 99999;
+  background: url('/miniprogram/image/46-1/Vector.png');
 }
