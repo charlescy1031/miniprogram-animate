@@ -7,7 +7,6 @@
         "pages/46-3/46-3",
         "pages/logs/logs"
     ],
-    "navigationStyle": "custom",
     "tabBar": {
         "custom": true,
         "color": "#a5b5b5",
@@ -37,7 +36,6 @@
     },
     "window": {
         "backgroundTextStyle": "dark",
-        "navigationStyle": "custom",
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "Weixin",
         "navigationBarTextStyle": "black",

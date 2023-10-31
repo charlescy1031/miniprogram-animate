@@ -73,11 +73,11 @@ Page({
 
         }, setIntervalNum)
         // 缩小动画
-        animationA.scaleX(0.128).scaleY(0.07196).opacity(1).step({ delay: 100, duration: 400 })
+        animationA.scaleX(0.128).scaleY(0.07196).opacity(1).step({ duration: 600 })
         // 展示navbar
         this.setData({ showNav: true })
         // 消失动画
-        animationA.translateY(600).opacity(1).step({ delay: 600, duration: 200 })
+        animationA.translateY(600).opacity(1).step({ delay: 300, duration: 200 })
         animationA.scale(0).opacity(0).step({ duration: 200 })
         setTimeout(() => {
             if (typeof this.getTabBar === 'function' && this.getTabBar()) {

@@ -1,6 +1,6 @@
 <view>
     <view class="blackbg" style="{{myClassStyleBg}}">
-        <nav showNav="{{showNav}}"></nav>
+        <nav showNav="{{showNav}}" navTitle="46-2"></nav>
     </view>
 
     <view class="animation-box" animation="{{animationData}}" id="viewId" 

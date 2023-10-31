@@ -1,4 +1,5 @@
 <view class="page">
+    <nav showNav="{{true}}" navTitle="45"></nav>
     <view class="title" >
         <text>幸运大抽奖</text>
     </view>

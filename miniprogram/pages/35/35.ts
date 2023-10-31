@@ -2,23 +2,22 @@
 
 Page({
   data: {
+    storeTopB: 250,
+    storeTopC: 400,
     cardList: [{
-      cardBgColor: "background:#AC4141;",
+      top: "top:0;",
       cardSrc: "/image/35/送礼专区-机制_01.png", cardTitle: "语音卡片", cardDesc: "（温馨提示：如不定制礼品卡，将默认官方礼品卡随之赠送）"
     },
     {
-      cardBgColor: "background:#8F5454;",
-      cardSrc: "/image/35/送礼专区-机制_02.png", cardTitle: "礼盒包装", cardDesc: "（温馨提示：如不定制礼品卡，将默认官方礼品卡随之赠送）"
+      top: "top:250px;",
+      cardSrc: "/image/35/送礼专区-机制_02.png", cardTitle: "礼盒包装", cardDesc: ""
     },
-    { cardBgColor: "background:#832F29;", cardSrc: "/image/35/送礼专区-机制_03.png", cardTitle: "专属赠品", cardDesc: "（温馨提示：如不定制礼品卡，将默认官方礼品卡随之赠送）" }],
+    {
+      top: "top:400px;", cardSrc: "/image/35/送礼专区-机制_03.png", cardTitle: "专属赠品", cardDesc: ""
+    }],
     showNav: true
   },
-  // 事件处理函数
-  bindViewTap() {
-    wx.navigateTo({
-      url: '../logs/logs',
-    })
-  },
+
   onLoad() {
     // @ts-ignore
     if (wx.getUserProfile) {
@@ -34,33 +33,87 @@ Page({
       })
     }
   },
-  getUserProfile() {
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-    wx.getUserProfile({
-      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    })
+  getBgClass(index: any) {
+    return 'card-item-' + index
   },
-  getUserInfo(e: any) {
-    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-    console.log(e)
+  // 事件处理函数
+  clickfn(e: any) {
+    var index = e.currentTarget.dataset.index;
+    let animationA = wx.createAnimation({
+      duration: 200,
+      timingFunction: 'linear',
+      delay: 0,
+      transformOrigin: '72% 80%'
+    })
+
+    console.log(index)
+    if (index === 0) {
+      // 数据复位
+      animationA.opacity(1).step({ duration: 200 })
+      let tempA = 0;
+      let posSetinterval = setInterval(() => {
+        if (tempA >= 100) {
+          clearInterval(posSetinterval)
+          this.data.storeTopB = 250;
+          this.data.storeTopC = 400;
+          this.setData({
+            ['cardList[1].top']: `top:${this.data.storeTopB}px;`,
+            ['cardList[2].top']: `top:${this.data.storeTopC}px;`,
+          })
+        } else {
+          this.setData({
+            ['cardList[1].top']: `top:${this.data.storeTopB}px;`,
+            ['cardList[2].top']: `top:${this.data.storeTopC}px;`,
+          })
+          this.data.storeTopB += 4
+          this.data.storeTopC += 4
+          tempA += 4
+        }
+      }, 1)
+
+
+     
+
+    } else if (index === 1) {
+      animationA.opacity(0).step({ duration: 200 })
+      let posSetinterval = setInterval(() => {
+        if (this.data.storeTopB <= 150) {
+          clearInterval(posSetinterval)
+          this.data.storeTopB = 150;
+          this.setData({
+            ['cardList[1].top']: `top:${this.data.storeTopB}px;`,
+          })
+        } else {
+          this.setData({
+            ['cardList[1].top']: `top:${this.data.storeTopB}px;`,
+          })
+          this.data.storeTopB -= 4
+        }
+      }, 1)
+
+    } else {
+      animationA.opacity(0).step({ duration: 200 })
+
+      let posSetinterval = setInterval(() => {
+        if (this.data.storeTopC <= 300) {
+          clearInterval(posSetinterval)
+          this.data.storeTopC = 300;
+          this.setData({
+            ['cardList[2].top']: `top:${this.data.storeTopC}px;`,
+          })
+        } else {
+          this.setData({
+            ['cardList[2].top']: `top:${this.data.storeTopC}px;`,
+          })
+          this.data.storeTopC -= 4
+        }
+      }, 1)
+    }
+    // 将动画导出到页面
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      animationData: animationA.export()
     })
   }
 })
 
-  < wxs module = "classGenerate" >
-    function getVideoClass(index) {
-      console.log('调用啦吗')
-      return "video-" + index
-    }
-module.exports.getVideoClass = getVideoClass;
-</wxs>
+

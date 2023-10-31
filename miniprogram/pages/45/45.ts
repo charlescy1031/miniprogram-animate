@@ -47,6 +47,7 @@ Page({
 		realScrollA: 0, // 实际滚动高度
 		realScrollB: 0,
 		realScrollC: 0,
+		showNav: true
 	},
 	// 事件处理函数
 	bindViewTap() {

@@ -14,14 +14,16 @@
     justify-content: flex-start;
     color: #fff;
 
-    &-0 {}
+    &-0 {
+      background:#AC4141;
+    }
 
     &-1 {
-      top: 140px;
+      background:#8F5454;
     }
 
     &-2 {
-      top: 280px;
+      background:#832F29;
     }
   }
 

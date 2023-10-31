@@ -19,10 +19,10 @@
         },
         "condition": false,
         "coverView": false,
-        "es6": false,
+        "es6": true,
         "postcss": false,
-        "minified": false,
-        "enhance": false,
+        "minified": true,
+        "enhance": true,
         "showShadowRootInWxmlPanel": false,
         "packNpmRelationList": []
     },
