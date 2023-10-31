@@ -39,9 +39,8 @@ Page({
                 selected: 0
             })
         }
-
     },
-    clickfn(e: any) {
+    clickfn() {
         // const query = wx.createSelectorQuery();
         // const element = query.select('#viewId');
         let animationA = wx.createAnimation({
@@ -63,12 +62,12 @@ Page({
                 setIntervalNum = 12;
                 calcuHeight -= 4.56;
                 this.setData({
-                    myClassStyleBg: `height: ${calcuHeight}vh;background:#000;`
+                    myClassStyleBg: `height: ${calcuHeight}vh;background:#404040;`
                 })
             } else {
                 calcuHeight -= 2.28;
                 this.setData({
-                    myClassStyleBg: `height: ${calcuHeight}vh;background:#000;`
+                    myClassStyleBg: `height: ${calcuHeight}vh;background:#404040;`
                 })
             }
 
@@ -124,6 +123,11 @@ Page({
         }, 600)
 
 
+    },
+    onReachBottom: function () {
+        setTimeout(() => {
+            this.clickfn()
+        }, 1000)
     },
     intervalChange(e: any) {
         this.setData({

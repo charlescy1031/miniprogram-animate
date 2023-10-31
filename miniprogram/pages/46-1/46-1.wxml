@@ -3,13 +3,15 @@
         <nav showNav="{{showNav}}"></nav>
     </view>
 
-    <view class="animation-box" animation="{{animationData}}" id="viewId">
+    <view class="animation-box" animation="{{animationData}}" id="viewId" 
+    style="background-image: url(../../image/46-1/Vector.png);background-size: 100% 100%;"
+    >
         <view class="container log-list" bindtap="clickfn">
-            <image class="log-imga" src="/image/46-1/vectora.svg" />
-            <image class="log-imgb" src="/image/46-1/vectorb.svg" />
-            <image class="log-imgc" src="/image/46-1/vectorc.svg" />
+            <image class="log-imga" src="/image/46-1/Vectora.svg" />
+            <image class="log-imgb" src="/image/46-1/Vectorb.svg" />
+            <image class="log-imgc" src="/image/46-1/Vectorc.svg" />
         </view>
-        <image style="{{myClassStyle}}" src="/image/46-1/Vector.png" />
+        <!-- <image style="{{myClassStyle}}" src="/image/46-1/Vector.png" /> -->
     </view>
 
 </view>

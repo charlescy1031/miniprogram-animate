@@ -1,5 +1,5 @@
 {
-
+  "enableReachBottom": true,
   "navigationStyle": "custom",
   "usingComponents": {
     "nav": "/component/nav/nav"
