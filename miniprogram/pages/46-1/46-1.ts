@@ -12,26 +12,9 @@ Page({
 
     data: {
         meum: wx.getMenuButtonBoundingClientRect(),
-        background: ["demo-text-1", "demo-text-2", "demo-text-3"],
-        indicatorDots: true,
-        vertical: false,
-        autoplay: false,
-        interval: 2000,
-        duration: 500,
-        myClassStyle: "",
+        myClassStyle: '',
+        myClassStyleBg: "",
         showNav: false
-    },
-
-    changeIndicatorDots() {
-        this.setData({
-            indicatorDots: !this.data.indicatorDots,
-        });
-    },
-
-    changeAutoplay() {
-        this.setData({
-            autoplay: !this.data.autoplay,
-        });
     },
     onShow: function () {
         if (typeof this.getTabBar === 'function' && this.getTabBar()) {
@@ -44,10 +27,10 @@ Page({
         // const query = wx.createSelectorQuery();
         // const element = query.select('#viewId');
         let animationA = wx.createAnimation({
-            duration: 1500,
-            timingFunction: 'linear',
+            duration: 2500,
+            timingFunction: 'ease',
             delay: 0,
-            transformOrigin: '72% 80% '
+            transformOrigin: " 70% 82% 0"
         })
         // console.log(this.data.meum.height)
         let calcuHeight = 100;
@@ -73,11 +56,26 @@ Page({
 
         }, setIntervalNum)
         // 缩小动画
-        animationA.scaleX(0.128).scaleY(0.07196).opacity(1).step({ duration: 600 })
+
+        const height = wx.getSystemInfoSync().windowHeight //屏幕高度
+        const width = wx.getSystemInfoSync().windowWidth　　//屏幕宽度
+        const res = wx.getSystemInfoSync();
+        console.log(res, width, height)
+        const Arrays: any = [[480, 752]]
+        if (Arrays.every(() => { })) { }
+        if (height > 750 && height !== 800) {
+            animationA.width(48).height(48).left('64%').bottom(90).step({ duration: 600 })
+        } else if (height === 800) {
+            animationA.width(48).height(48).left('64%').bottom(58).step({ duration: 600 })
+        } else {
+            animationA.width(48).height(48).left('64%').bottom(58).step({ duration: 600 })
+        }
+
         // 展示navbar
-        this.setData({ showNav: true })
+        this.setData({ showNav: true, myClassStyle: "border-radius:10px;" })
+
         // 消失动画
-        animationA.translateY(600).opacity(1).step({ delay: 300, duration: 200 })
+        animationA.translateY(58).opacity(1).step({ delay: 1500, duration: 200 })
         animationA.scale(0).opacity(0).step({ duration: 200 })
         setTimeout(() => {
             if (typeof this.getTabBar === 'function' && this.getTabBar()) {
@@ -86,16 +84,13 @@ Page({
                     selected: 0,
                 })
             }
-        }, 1500)
+
+        }, 1000)
         // 将动画导出到页面
         this.setData({
             animationData: animationA.export()
         })
-        setTimeout(() => {
-            this.setData({
-                myClassStyle: 'border-radius:60px;',
-            })
-        }, 600)
+
 
 
     },

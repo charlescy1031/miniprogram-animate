@@ -4,12 +4,40 @@ image {
   // border: 1px solid red;
 }
 
+.close-icon {
+  position: absolute;
+  z-index: 100;
+  top: 126px;
+  right: 14%;
+  width: 20px;
+  height: 20px;
+}
+
 .log-list {
   position: absolute;
+  // top: 120px;
+  z-index: 999;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &-s {
+    width: 80vw;
+    height: 55vh;
+    flex-direction: column;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.log-list-view {
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .log-imga {
@@ -32,8 +60,34 @@ image {
   flex-shrink: 0;
 }
 
+.explore {
+  color: white;
+  width: 70%;
+  height: 50px;
+  background: #fb8c00;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 30px;
+  margin-bottom: 40px;
+}
+
 .animation-box {
   position: absolute;
-  z-index: 99999;
-  background: url('/miniprogram/image/46-1/Vector.png');
+  z-index: 999999;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+
+  &-b {
+    margin: 0 auto;
+    margin-top: 105px;
+    width: 80vw;
+    height: 55vh;
+    border-radius: 10px;
+
+    .image-bg {
+      width: 80vw;
+      height: 60vh;
+    }
+  }
 }

@@ -46,7 +46,7 @@ Page({
       transformOrigin: '72% 80%'
     })
 
-    console.log(index)
+
     if (index === 0) {
       // 数据复位
       animationA.opacity(1).step({ duration: 200 })

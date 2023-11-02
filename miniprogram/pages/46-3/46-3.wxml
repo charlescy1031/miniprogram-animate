@@ -3,15 +3,26 @@
         <nav showNav="{{showNav}}" navTitle="46-3"></nav>
     </view>
 
-    <view class="animation-box" animation="{{animationData}}" id="viewId" 
-    style="background-image: url(../../image/46-1/Vector.png);background-size: 100% 100%;"
-    >
+    <view class="animation-box" wx:if="{{showScreen}}" animation="{{animationData1}}" style="background:url(https://gd-hbimg.huaban.com/ed2daada74197bdebb8de43b4c74cb741fbe0d63c02bd-WZpvUw);background-size: 100%;">
         <view class="container log-list" bindtap="clickfn">
-            <image class="log-imga" src="/image/46-1/Vectora.svg" />
-            <image class="log-imgb" src="/image/46-1/Vectorb.svg" />
-            <image class="log-imgc" src="/image/46-1/Vectorc.svg" />
+            <view class="log-list-view">
+                <image class="log-imga" src="/image/46-1/Vectora.svg" />
+                <image class="log-imgb" src="/image/46-1/Vectorb.svg" />
+                <image class="log-imgc" src="/image/46-1/Vectorc.svg" />
+            </view>
         </view>
-        <image style="{{myClassStyle}}" src="/image/46-1/Vector.png" />
+    </view>
+
+    <view class="animation-box-b" animation="{{animationData2}}" style="background:url(https://gd-hbimg.huaban.com/ed2daada74197bdebb8de43b4c74cb741fbe0d63c02bd-WZpvUw);background-size: 100% 100%;">
+        <image class="close-icon" bindtap="closefn" src="/image/46-2/white-close.png" mode="" />
+        <view class=" log-list-s">
+            <view class="log-list-view">
+                <image class="log-imga" src="/image/46-1/Vectora.svg" />
+                <image class="log-imgb" src="/image/46-1/Vectorb.svg" />
+                <image class="log-imgc" src="/image/46-1/Vectorc.svg" />
+            </view>
+            <text class="explore">开始探索</text>
+        </view>
     </view>
 
 </view>

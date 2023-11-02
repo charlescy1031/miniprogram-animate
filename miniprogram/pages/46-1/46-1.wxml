@@ -3,15 +3,13 @@
         <nav showNav="{{showNav}}" navTitle="46-1"></nav>
     </view>
 
-    <view class="animation-box" animation="{{animationData}}" id="viewId" 
-    style="background-image: url(../../image/46-1/Vector.png);background-size: 100% 100%;"
-    >
+    <view class="animation-box" animation="{{animationData}}" style="{{myClassStyle}}background:url(https://gd-hbimg.huaban.com/ed2daada74197bdebb8de43b4c74cb741fbe0d63c02bd-WZpvUw);background-size: 100%;" >
         <view class="container log-list" bindtap="clickfn">
             <image class="log-imga" src="/image/46-1/Vectora.svg" />
             <image class="log-imgb" src="/image/46-1/Vectorb.svg" />
             <image class="log-imgc" src="/image/46-1/Vectorc.svg" />
         </view>
-        <image style="{{myClassStyle}}" src="/image/46-1/Vector.png" />
+       
     </view>
 
 </view>
