@@ -57,104 +57,41 @@ Page({
       delay: 0,
     })
     if (index === 0 && this.data.isCOpen) {
-      animationA.opacity(1).step({ duration: 1000 })
-      animationB.top(250).step({ duration: 1000 })
-      animationC.top(400).step({ duration: 1000 })
+      animationA.opacity(1).step({ duration: 500 })
+      animationB.top(250).step({ duration: 500 })
+      animationC.top(400).step({ duration: 500 })
       this.setData({ isAOpen: true, isBOpen: false, isCOpen: false })
     }
 
-
     if (index === 1 && this.data.isAOpen) {
-      animationA.opacity(0).step({ duration: 1000 })
-      animationB.top(150).step({ duration: 1000 })
+      animationA.opacity(0).step({ duration: 500 })
+      animationB.top(150).step({ duration: 500 })
       this.setData({ isAOpen: false, isBOpen: true, isCOpen: false })
     } else if (index === 1 && !this.data.isAOpen) {
-      animationA.opacity(1).step({ duration: 1000 })
-      animationB.top(250).step({ duration: 1000 })
-      animationC.top(400).step({ duration: 1000 })
+      animationA.opacity(1).step({ duration: 500 })
+      animationB.top(250).step({ duration: 500 })
+      animationC.top(400).step({ duration: 500 })
       this.setData({ isAOpen: true, isBOpen: false, isCOpen: false })
-    }else{
+    } else {
 
     }
     if (index === 2 && !this.data.isCOpen) {
-      animationA.opacity(0).step({ duration: 1000 })
-      animationB.top(150).step({ duration: 1000 })
-      animationC.top(300).step({ duration: 1000 })
+      animationA.opacity(0).step({ duration: 500 })
+      animationB.top(150).step({ duration: 500 })
+      animationC.top(300).step({ duration: 500 })
       this.setData({ isAOpen: false, isBOpen: false, isCOpen: true })
     } else if (index === 2 && this.data.isCOpen) {
-      animationC.top(400).step({ duration: 1000 })
+      animationC.top(400).step({ duration: 500 })
       this.setData({ isAOpen: false, isBOpen: true, isCOpen: false })
     }
 
-
+    // 将动画导出到页面
     this.setData({
       animationData1: animationA.export(),
       animationData2: animationB.export(),
       animationData3: animationC.export()
     })
-    // if (index === 0) {
-    //   // 数据复位
-    //   animationA.opacity(1).step({ duration: 200 })
-    //   let tempA = 0;
-    //   let posSetinterval = setInterval(() => {
-    //     if (tempA >= 100) {
-    //       clearInterval(posSetinterval)
-    //       this.data.storeTopB = 250;
-    //       this.data.storeTopC = 400;
-    //       this.setData({
-    //         ['cardList[1].top']: `top:${this.data.storeTopB}px;`,
-    //         ['cardList[2].top']: `top:${this.data.storeTopC}px;`,
-    //       })
-    //     } else {
-    //       this.setData({
-    //         ['cardList[1].top']: `top:${this.data.storeTopB}px;`,
-    //         ['cardList[2].top']: `top:${this.data.storeTopC}px;`,
-    //       })
-    //       this.data.storeTopB += 4
-    //       this.data.storeTopC += 4
-    //       tempA += 4
-    //     }
-    //   }, 1)
 
-
-
-
-    // } else if (index === 1) {
-    //   animationA.opacity(0).step({ duration: 200 })
-    //   let posSetinterval = setInterval(() => {
-    //     if (this.data.storeTopB <= 150) {
-    //       clearInterval(posSetinterval)
-    //       this.data.storeTopB = 150;
-    //       this.setData({
-    //         ['cardList[1].top']: `top:${this.data.storeTopB}px;`,
-    //       })
-    //     } else {
-    //       this.setData({
-    //         ['cardList[1].top']: `top:${this.data.storeTopB}px;`,
-    //       })
-    //       this.data.storeTopB -= 4
-    //     }
-    //   }, 1)
-
-    // } else {
-    //   animationA.opacity(0).step({ duration: 200 })
-
-    //   let posSetinterval = setInterval(() => {
-    //     if (this.data.storeTopC <= 300) {
-    //       clearInterval(posSetinterval)
-    //       this.data.storeTopC = 300;
-    //       this.setData({
-    //         ['cardList[2].top']: `top:${this.data.storeTopC}px;`,
-    //       })
-    //     } else {
-    //       this.setData({
-    //         ['cardList[2].top']: `top:${this.data.storeTopC}px;`,
-    //       })
-    //       this.data.storeTopC -= 4
-    //     }
-    //   }, 1)
-    // }
-    // 将动画导出到页面
 
   }
 })

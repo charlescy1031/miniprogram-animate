@@ -50,7 +50,7 @@ Page({
                     myClassStyleBg: `height: ${calcuHeight}vh;background:#000;`
                 })
             }
-        }, 3)
+        })
 
         // 隐藏动画
         animationA.opacity(0).step({ duration: 1200 })

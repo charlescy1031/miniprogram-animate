@@ -13,7 +13,7 @@
         </view>
     </view>
 
-    <view class="animation-box-b" animation="{{animationData2}}" style="background:url(https://gd-hbimg.huaban.com/ed2daada74197bdebb8de43b4c74cb741fbe0d63c02bd-WZpvUw);background-size: 100% 100%;">
+    <view class="animation-box-b" animation="{{animationData2}}"  wx:if="{{showBanner}}" style="background:url(https://gd-hbimg.huaban.com/ed2daada74197bdebb8de43b4c74cb741fbe0d63c02bd-WZpvUw);background-size: 100% 100%;">
         <image class="close-icon" bindtap="closefn" src="/image/46-2/white-close.png" mode="" />
         <view class=" log-list-s">
             <view class="log-list-view">
