@@ -1,15 +1,6 @@
 // index.ts
-// 获取应用实例
-// const app = getApp<IAppOption>()
 
 Page({
-    onShareAppMessage() {
-        return {
-            title: "swiper",
-            path: "page/component/pages/swiper/swiper",
-        };
-    },
-
     data: {
         meum: wx.getMenuButtonBoundingClientRect(),
         myClassStyle: '',
@@ -24,13 +15,10 @@ Page({
         }
     },
     clickfn() {
-        // const query = wx.createSelectorQuery();
-        // const element = query.select('#viewId');
         let animationA = wx.createAnimation({
             duration: 3500,
             timingFunction: 'ease',
             delay: 0,
-            // transformOrigin: " 70% 82% 0"
         })
         // console.log(this.data.meum.height)
         let calcuHeight = 100;
@@ -87,15 +75,5 @@ Page({
             this.clickfn()
         }, 1000)
     },
-    intervalChange(e: any) {
-        this.setData({
-            interval: e.detail.value,
-        });
-    },
 
-    durationChange(e: any) {
-        this.setData({
-            duration: e.detail.value,
-        });
-    },
 });

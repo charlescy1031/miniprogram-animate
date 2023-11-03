@@ -16,15 +16,6 @@ Page({
     }],
     showNav: true
   },
-
-  onLoad() {
-    // @ts-ignore
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
-  },
   onShow: function () {
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({
@@ -32,13 +23,9 @@ Page({
       })
     }
   },
-  getBgClass(index: any) {
-    return 'card-item-' + index
-  },
   // 事件处理函数
   clickfn(e: any) {
     var index = e.currentTarget.dataset.index;
-    console.log(index)
     let animationA = wx.createAnimation({
       duration: 1500,
       timingFunction: 'ease',
@@ -92,8 +79,12 @@ Page({
       animationData3: animationC.export()
     })
 
-
-  }
+  },
+  onReachBottom: function () {
+    setTimeout(() => {
+        this.clickfn(e)
+    }, 1000)
+},
 })
 
 
