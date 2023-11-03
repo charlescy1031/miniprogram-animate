@@ -4,6 +4,7 @@ image {
   // border: 1px solid red;
 }
 
+
 .close-icon {
   position: absolute;
   z-index: 99999;
@@ -60,8 +61,9 @@ image {
 }
 
 .animation-box {
-  position: relative;
+  position: absolute;
+  top: 0;
   width: 100vw;
   height: 100vh;
-  margin: 0 auto;
+  z-index: 99999;
 }

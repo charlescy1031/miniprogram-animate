@@ -9,7 +9,7 @@ Page({
         meum: wx.getMenuButtonBoundingClientRect(),
         showBanner: true,
         myClassStyle: "",
-        showNav: false,
+        showNav: true,
         showIcon: false,
         showExplore: "none",
         zIndex: 99999,
@@ -25,43 +25,36 @@ Page({
     clickfn() {
 
         let animationA = wx.createAnimation({
-            duration: 400,
+            duration: 1200,
             timingFunction: 'ease',
             delay: 0,
             transformOrigin: '10% 10% '
         })
-
         let animationB = wx.createAnimation({
-            duration: 1500,
+            duration: 1200,
             timingFunction: 'ease',
             delay: 0,
-            transformOrigin: '5% 2% 0'
+            transformOrigin: '10% 10% '
         })
-
+        animationB.opacity(0.9).step({ duration: 10 })
         let calcuHeight = 100;
         let blackBgToWhiteInterval = setInterval(() => {
-            if (calcuHeight <= 10) {
+            if (calcuHeight <= 9.6) {
                 this.setData({
                     myClassStyleBg: 'height: 9.6vh;background:#fff;'
                 })
                 clearInterval(blackBgToWhiteInterval)
-            } else if (calcuHeight < 20) {
-                calcuHeight -= 4.56;
-                this.setData({
-                    myClassStyleBg: `height: ${calcuHeight}vh;background:#404040;`
-                })
             } else {
-                calcuHeight -= 2.28;
+                calcuHeight -= 1.14;
                 this.setData({
-                    myClassStyleBg: `height: ${calcuHeight}vh;background:#404040;`
+                    myClassStyleBg: `height: ${calcuHeight}vh;background:#000;`
                 })
             }
-        })
+        }, 3)
 
         // 隐藏动画
-        animationA.opacity(0).step({ duration: 800 })
-
-
+        animationA.opacity(0).step({ duration: 1200 })
+        animationB.opacity(1).step({ duration: 1200 })
         // 展示navbar
         setTimeout(() => {
             this.setData({ showNav: true, zIndex: 9, showScreen: false })

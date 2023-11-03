@@ -9,7 +9,8 @@ Page({
         meum: wx.getMenuButtonBoundingClientRect(),
         showBanner: true,
         myClassStyle: "",
-        showNav: false,
+        myClassStyleBg: "",
+        showNav: true,
         showIcon: false,
         showExplore: "none",
         zIndex: 99999,
@@ -49,27 +50,22 @@ Page({
 
         let calcuHeight = 100;
         let blackBgToWhiteInterval = setInterval(() => {
-            if (calcuHeight <= 10) {
+            if (calcuHeight <= 9.6) {
                 this.setData({
                     myClassStyleBg: 'height: 9.6vh;background:#fff;'
                 })
                 clearInterval(blackBgToWhiteInterval)
-            } else if (calcuHeight < 20) {
-                calcuHeight -= 4.56;
-                this.setData({
-                    myClassStyleBg: `height: ${calcuHeight}vh;background:#404040;`
-                })
             } else {
-                calcuHeight -= 2.28;
+                calcuHeight -= 1.14;
                 this.setData({
-                    myClassStyleBg: `height: ${calcuHeight}vh;background:#404040;`
+                    myClassStyleBg: `height: ${calcuHeight}vh;background:#000;`
                 })
             }
-        })
+        }, 3)
 
         // 缩小动画
-        animationA.scale(0.8).translateX(20).translateY(-60).step({ duration: 400 })
-        animationC.width("80vw").height("55vh").opacity(1).top("100px").step({ duration: 400 })
+        animationA.scale(0.8).translateX(20).translateY(-60).step({ duration: 800 })
+        animationC.width("80vw").height("55vh").opacity(1).top("180px").left("10%").step({ duration: 800 })
 
         if (this.data.explorePos !== 0) {
             animationB.translateY(-100).opacity(0).step({ duration: 100 })
