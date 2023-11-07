@@ -16,8 +16,10 @@
     <Prizedraw wx:elif="{{index==1}}"></Prizedraw>
     <Slidecard wx:elif="{{index==2}}"></Slidecard>
     <Scalemid wx:elif="{{index==3}}"></Scalemid>
-    <Fadeoutin wx:else="{{index==4}}"></Fadeoutin>
+    <Fadeoutin wx:elif="{{index==4}}"></Fadeoutin>
+<Claimprizea  wx:elif="{{index==5}}"> </Claimprizea>
 
+<Claimprizeb  wx:else="{{index==6}}"> </Claimprizeb>
 
 
 </view>

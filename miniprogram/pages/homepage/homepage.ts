@@ -1,8 +1,8 @@
 // index.ts
 Page({
     data: {
-        index: 0,
-        array: ['46-1', '45', '35', '46-2', '46-3'],
+        index: 5,
+        array: ['46-1', '45', '35', '46-2', '46-3', '47-1', '47-2'],
     },
     onShow: function () {
         if (typeof this.getTabBar === 'function' && this.getTabBar()) {
@@ -18,7 +18,7 @@ Page({
         })
     },
     reloadPage() {
-        wx.reLaunch({url:"/miniprogram/pages/homepage"})
+        wx.reLaunch({ url: "/miniprogram/pages/homepage" })
     }
 
 })

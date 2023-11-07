@@ -1,0 +1,36 @@
+/* component/Claimprize.wxss */
+.button {
+    color: rgba(0, 0, 0, 0.80);
+    text-align: center;
+    font-family: STHeiti;
+    // border: 1px solid rgba(0, 0, 0, 0.80);
+    background: #FFF;
+    border-radius: 0px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    width: 130px;
+    height: 44px;
+    padding: 12px 33px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.button {
+    color: #333;
+}
+
+.button  {
+    background: linear-gradient(to right, #ec695c, #61c454) no-repeat right bottom;
+    // background: linear-gradient(to top, #ec695c, #61c454) no-repeat right top;
+    background-size: 0 2px;
+    transition: background-size 1300ms;
+}
+
+.button:hover {
+    background-position-x: left;
+    background-size: 100% 2px;
+}

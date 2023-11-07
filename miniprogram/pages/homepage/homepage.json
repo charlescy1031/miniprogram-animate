@@ -6,6 +6,8 @@
     "Prizedraw": "/component/Prizedraw/Prizedraw",
     "Slidecard": "/component/Slidecard/Slidecard",
     "Scalemid": "/component/Scalemid/Scalemid",
-    "Fadeoutin": "/component/Fadeoutin/Fadeoutin"
+    "Fadeoutin": "/component/Fadeoutin/Fadeoutin",
+    "Claimprizea": "/component/Claimprizea/Claimprizea",
+    "Claimprizeb": "/component/Claimprizeb/Claimprizeb"
   }
 }
