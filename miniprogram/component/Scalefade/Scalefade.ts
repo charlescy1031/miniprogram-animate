@@ -62,8 +62,8 @@ Page({
         this.setData({ showNav: true, myClassStyle: "border-radius:10px;" ,myClassStyle_text:"width:40px;height:10px;margin:0px;"})
 
         // 消失动画
-        // animationA.translateY(58).opacity(1).step({ delay: 1000, duration: 200 })
-        // animationA.scale(0).opacity(0).step({ duration: 800 })
+        animationA.translateY(58).opacity(1).step({ delay: 1000, duration: 200 })
+        animationA.scale(0).opacity(0).step({ duration: 800 })
         setTimeout(() => {
             if (typeof this.getTabBar === 'function' && this.getTabBar()) {
                 this.getTabBar().setData({

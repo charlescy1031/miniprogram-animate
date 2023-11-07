@@ -1,4 +1,4 @@
-<view style="width:100vw;height:90vh;background:#000;background-size: 100%;background-repeat: no-repeat;">
+<view style="width:100vw;height:90vh;background:url(https://gd-hbimg.huaban.com/c757a27bb8b07c87864a2b10b35e2ceff2a0c14911e3d-8anezV_fw1200webp);background-size: 100%;background-repeat: no-repeat;">
     <view class="blackbg" style="{{myClassStyleBg}}">
         <nav showNav="{{true}}" navTitle="46-1"></nav>
     </view>
