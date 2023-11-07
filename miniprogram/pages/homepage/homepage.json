@@ -1,0 +1,11 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "nav": "/component/nav/nav",
+    "Scalefade": "/component/Scalefade/Scalefade",
+    "Prizedraw": "/component/Prizedraw/Prizedraw",
+    "Slidecard": "/component/Slidecard/Slidecard",
+    "Scalemid": "/component/Scalemid/Scalemid",
+    "Fadeoutin": "/component/Fadeoutin/Fadeoutin"
+  }
+}

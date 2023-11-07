@@ -1,0 +1,23 @@
+<view style="width:100vw;height:90vh;background:#000;background-size: 100%;background-repeat: no-repeat;">
+    <view class="blackbg" style="{{myClassStyleBg}}">
+        <nav showNav="{{true}}" navTitle="46-1"></nav>
+    </view>
+
+    <view class="section">
+        <view class="section__title">普通选择器</view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker">
+                当前选择：{{array[index]}}
+            </view>
+        </picker>
+    </view>
+
+    <Scalefade wx:if="{{index==0}}"></Scalefade>
+    <Prizedraw wx:elif="{{index==1}}"></Prizedraw>
+    <Slidecard wx:elif="{{index==2}}"></Slidecard>
+    <Scalemid wx:elif="{{index==3}}"></Scalemid>
+    <Fadeoutin wx:else="{{index==4}}"></Fadeoutin>
+
+
+
+</view>

@@ -1,8 +1,4 @@
 <view>
-    <view class="blackbg" style="{{myClassStyleBg}}">
-        <nav showNav="{{showNav}}" navTitle="46-3"></nav>
-    </view>
-
     <view class="animation-box" wx:if="{{showScreen}}" bindtap="clickfn" animation="{{animationData1}}" style="background:url(https://gd-hbimg.huaban.com/ed2daada74197bdebb8de43b4c74cb741fbe0d63c02bd-WZpvUw);background-size: 100%;">
         <view class="container log-list" bindtap="clickfn">
             <view class="log-list-view">
@@ -13,7 +9,7 @@
         </view>
     </view>
 
-    <view class="animation-box-b" animation="{{animationData2}}"  wx:if="{{showBanner}}" style="background:url(https://gd-hbimg.huaban.com/ed2daada74197bdebb8de43b4c74cb741fbe0d63c02bd-WZpvUw);background-size: 100% 100%;">
+    <view class="animation-box-b" animation="{{animationData2}}" wx:if="{{showBanner}}" style="background:url(https://gd-hbimg.huaban.com/ed2daada74197bdebb8de43b4c74cb741fbe0d63c02bd-WZpvUw);background-size: 100% 100%;">
         <image class="close-icon" bindtap="closefn" src="/image/46-2/white-close.png" mode="" />
         <view class=" log-list-s">
             <view class="log-list-view">
@@ -24,6 +20,5 @@
             <text class="explore">开始探索</text>
         </view>
     </view>
-    <view style="width:100vw;height:90vh;background:url(https://gd-hbimg.huaban.com/c757a27bb8b07c87864a2b10b35e2ceff2a0c14911e3d-8anezV_fw1200webp);background-size: 100%;background-repeat: no-repeat;">
-    </view>
+
 </view>

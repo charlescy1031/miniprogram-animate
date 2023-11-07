@@ -1,0 +1,11 @@
+<view class="animation-box" style="z-index: {{zIndex}};{{myClassStyle}};background:url(https://gd-hbimg.huaban.com/ed2daada74197bdebb8de43b4c74cb741fbe0d63c02bd-WZpvUw);background-size:100%;" id="viewId" wx:if="{{showBanner}}" animation="{{animationData3}}">
+    <image class="close-icon" wx:if="{{showIcon}}" bindtap="closefn" src="/image/46-2/white-close.png" mode="" />
+    <view class="container log-list" bindtap="clickfn">
+        <view class="log-list-view" animation="{{animationData1}}">
+            <image class="log-imga" src="/image/46-1/Vectora.svg" />
+            <image class="log-imgb" src="/image/46-1/Vectorb.svg" />
+            <image class="log-imgc" src="/image/46-1/Vectorc.svg" />
+        </view>
+        <text class="explore" style="display: {{showExplore}};" animation="{{animationData2}}">开始探索</text>
+    </view>
+</view>

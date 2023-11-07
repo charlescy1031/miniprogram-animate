@@ -1,11 +1,10 @@
 {
     "pages": [
-        "pages/46-1/46-1",
-        "pages/45/45",
-        "pages/35/35",
-        "pages/46-2/46-2",
-        "pages/46-3/46-3",
-        "pages/logs/logs"
+        "pages/homepage/homepage",
+        "pages/store/store",
+        "pages/events/events",
+        "pages/cart/cart",
+        "pages/profile/profile"
     ],
     "tabBar": {
         "custom": true,
@@ -13,23 +12,23 @@
         "selectedColor": "#22cd5e",
         "borderStyle": "black",
         "list": [{
-                "pagePath": "pages/46-1/46-1",
-                "text": "46-1"
+                "pagePath": "pages/homepage/homepage",
+                "text": "首页"
             },
             {
-                "pagePath": "pages/45/45",
+                "pagePath": "pages/store/store",
                 "text": "45"
             },
             {
-                "pagePath": "pages/35/35",
+                "pagePath": "pages/events/events",
                 "text": "35"
             },
             {
-                "pagePath": "pages/46-2/46-2",
+                "pagePath": "pages/cart/cart",
                 "text": "46-2"
             },
             {
-                "pagePath": "pages/46-3/46-3",
+                "pagePath": "pages/profile/profile",
                 "text": "46-3"
             }
         ]
@@ -40,7 +39,8 @@
         "navigationBarTitleText": "Weixin",
         "navigationBarTextStyle": "black",
         "homeButton": true,
-        "backgroundColorTop": "#fff"
+        "backgroundColorTop": "#fff",
+        "enablePullDownRefresh": true
     },
     "style": "v2",
     "sitemapLocation": "sitemap.json"

@@ -4,30 +4,30 @@ Component({
         color: "#a5b5b5",
         selectedColor: "#22cd5e",
         list: [{
-            pagePath: "/pages/46-1/46-1",
+            pagePath: "/pages/homepage/homepage",
             iconPath: "/image/tabBar/24.svg",
             selectedIconPath: "/image/tabBar/24selected.svg",
-            text: "46-1"
+            text: "首页"
         }, {
-            pagePath: "/pages/45/45",
+            pagePath: "/pages/store/store",
             iconPath: "/image/tabBar/24.svg",
             selectedIconPath: "/image/tabBar/24selected.svg",
-            text: "45"
+            text: "商城"
         }, {
-            pagePath: "/pages/35/35",
+            pagePath: "/pages/events/events",
             iconPath: "/image/tabBar/24.svg",
             selectedIconPath: "/image/tabBar/24selected.svg",
-            text: "35"
+            text: "活动"
         }, {
-            pagePath: "/pages/46-2/46-2",
+            pagePath: "/pages/cart/cart",
             iconPath: "/image/tabBar/24.svg",
             selectedIconPath: "/image/tabBar/24selected.svg",
-            text: "46-2"
+            text: "购物车"
         }, {
-            pagePath: "/pages/46-3/46-3",
+            pagePath: "/pages/profile/profile",
             iconPath: "/image/tabBar/24.svg",
             selectedIconPath: "/image/tabBar/24selected.svg",
-            text: "46-3"
+            text: "我的"
         }]
     },
     attached() {
