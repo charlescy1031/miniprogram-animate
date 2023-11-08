@@ -1,3 +1,25 @@
 <!--component/Claimprize.wxml-->
-<button class="button"><text>长按兑奖</text></button>
-<view class="title"> <text>asasdas</text></view>
+<!-- <view class=" out">
+    <view class="border-top" animation="{{animationDataTop}}"></view>
+    <view class="in ">
+        <view class="prize_success" animation="{{animationDataSuccess}}">
+            <image style="width:20px;height:20px;" src="/image/47/Check_circle_outline.svg" mode="" /> 兑奖成功
+        </view>
+        <view class="border-left" animation="{{animationDataLeft}}"></view>
+        <view class="content" bindlongtap="claimprizeFn" style="{{myClassStyle}}">长按兑奖</view>
+        <view class="border-right" animation="{{animationDataRight}}"></view>
+    </view>
+    <view class="border-bottom" animation="{{animationDataBottom}}"></view>
+</view> -->
+<view class=" out">
+    <view class="border-top" style="{{myClassStyleTop}}"></view>
+    <view class="in ">
+        <view class="prize_success" style="{{myClassStyleSuccess}}">
+            <image style="width:20px;height:20px;" src="/image/47/Check_circle_outline.svg" mode="" /> 兑奖成功
+        </view>
+        <view class="border-left" style="{{myClassStyleLeft}}"></view>
+        <view class="content" catch:longpress="claimprizeFn" capture-catch:touchend="touchEnd" capture-catch:touchcancel="touchCancel" style="{{myClassStyle}}">长按兑奖</view>
+        <view class="border-right" style="{{myClassStyleRight}}"></view>
+    </view>
+    <view class="border-bottom" style="{{myClassStyleBottom}}"></view>
+</view>
