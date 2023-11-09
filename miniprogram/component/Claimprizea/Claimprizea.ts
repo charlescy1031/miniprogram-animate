@@ -22,7 +22,11 @@ Component({
         toTopInter: 0, // 右边框计算动画
         toLeftInter: 0,  // 上边框计算动画
         toBottomInter: 0,// 左边框计算动画
-        topbgInter: 0 // 文字最后蓝色背景
+        topbgInter: 0,// 文字最后蓝色背景
+        rightSetTime: 0, // 右边框延时
+        topSetTime: 0, // 上边框延时
+        leftSetTime: 0, // 左边框延时
+        prizeSetTime: 0, // 背景动画
     },
 
     /**
@@ -52,12 +56,12 @@ Component({
                 }
             }, 7)
             // 第二步right
-            let right = 44;
-            setTimeout(() => {
+            let right = -44;
+            this.data.rightSetTime = setTimeout(() => {
                 this.data.toTopInter = setInterval(() => {
                     if (right < 0) {
                         this.setData({ myClassStyleRight: `bottom:${right}px;right:0px` })
-                        right -= 1
+                        right += 1
                     } else {
                         clearInterval(this.data.toTopInter)
                     }
@@ -65,7 +69,7 @@ Component({
             }, 1200)
             // 第三步top
             let top = -130;
-            setTimeout(() => {
+            this.data.topSetTime = setTimeout(() => {
                 this.data.toLeftInter = setInterval(() => {
                     if (top < 0) {
                         this.setData({ myClassStyleTop: `top:0px;right:${top}px` })
@@ -77,7 +81,7 @@ Component({
             }, 2200)
             // 第四步left
             let left = -44;
-            setTimeout(() => {
+            this.data.leftSetTime = setTimeout(() => {
                 this.data.toBottomInter = setInterval(() => {
                     if (left < 0) {
                         this.setData({ myClassStyleLeft: `top:${left}px;left:0px` })
@@ -89,7 +93,7 @@ Component({
             }, 3200)
             // 第五步兑奖成功
             let topbg = -44;
-            setTimeout(() => {
+            this.data.prizeSetTime = setTimeout(() => {
                 this.data.topbgInter = setInterval(() => {
                     if (topbg < 0) {
                         this.setData({ myClassStyleSuccess: `top:${topbg}px;left:0px` })
@@ -102,18 +106,23 @@ Component({
         },
         touchEnd() {
             let count = 0
-
             const stopClearInter = setInterval(() => {
-                if (count > 5000) {
+                if (count > 5) {
                     count += 1
                     clearInterval(stopClearInter)
+                    console.log('清理动画')
                 } else {
+                    console.log('清理执行动画')
                     // 清理所有边框动画和背景动画
                     clearInterval(this.data.toRightInter)
                     clearInterval(this.data.toTopInter)
                     clearInterval(this.data.toLeftInter)
                     clearInterval(this.data.toBottomInter)
                     clearInterval(this.data.topbgInter)
+                    clearTimeout(this.data.rightSetTime)
+                    clearTimeout(this.data.topSetTime)
+                    clearTimeout(this.data.leftSetTime)
+                    clearTimeout(this.data.prizeSetTime)
                     // 复位边框及背景
                     this.setData({ myClassStyleBottom: `bottom:0px;left:-130px` })
                     this.setData({ myClassStyleRight: `bottom:-44px;right:0px` })
@@ -122,7 +131,7 @@ Component({
                     this.setData({ myClassStyleSuccess: `top:-44px;left:0px` })
                     this.setData({ myClassStyle: "background:#fff;" })
                 }
-            })
+            }, 1000)
         }
         // claimprizeFn() {
         //     let animationBottom = wx.createAnimation({

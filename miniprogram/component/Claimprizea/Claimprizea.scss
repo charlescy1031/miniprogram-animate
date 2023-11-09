@@ -58,13 +58,15 @@
     display: flex;
     flex-direction: row;
 }
-.prize_success{
-  
-    color:#fff;
+
+.prize_success {
+
+    color: #fff;
     font-size: 14px;
     font-weight: 500;
     position: absolute;
-    top:-44px;
+    top: -44px;
+    left: 0px;
     width: 130px;
     height: 44px;
     display: flex;
@@ -72,11 +74,12 @@
     justify-content: center;
     line-height: 44px;
     background: rgb(0, 47, 255);
-    display: none;
-    image{
+
+    image {
         margin-right: 10px;
     }
 }
+
 .content {
     width: 128px;
     line-height: 44px;
@@ -94,7 +97,7 @@
 
     &-bottom {
         position: absolute;
-        bottom:0px;
+        bottom: 0px;
         left: -130px;
         width: 130px;
         height: 1px;
@@ -104,6 +107,7 @@
     &-left {
         position: absolute;
         top: -44px;
+        left: 0px;
         width: 1px;
         height: 44px;
         background: rgb(0, 140, 255);
@@ -111,7 +115,7 @@
 
     &-right {
         position: absolute;
-        right:0;
+        right: 0;
         bottom: -44px;
         width: 1px;
         height: 44px;
