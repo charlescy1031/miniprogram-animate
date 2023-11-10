@@ -4,9 +4,13 @@
   z-index: 0;
   font-size: 12px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .topView .topBtn {
+  text-align: center;
   width: 500rpx;
   border: none;
   font-size: 12px;

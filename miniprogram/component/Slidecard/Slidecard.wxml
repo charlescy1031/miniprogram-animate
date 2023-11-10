@@ -1,16 +1,16 @@
 <view class="card-list">
   <view wx:for-index="index" data-index="{{index}}">
-    <view class="card-item card-item-0" wx:if="{{index===0}}" data-index="{{index}}" bindtap="clickfn" style="{{item.top}}" wx:for="{{cardList}}" wx:key="cardBgColor">
+    <view class="card-item card-item-0" wx:if="{{index===0}}" data-index="{{index}}" bindtap="moveCard" style="{{item.top}}" wx:for="{{cardList}}" wx:key="cardBgColor">
       <image class="card-img" src="{{item.cardSrc}}" mode="" />
       <text class="card-title">{{item.cardTitle}}</text>
       <text class="card-desc" animation="{{animationData1}}">{{item.cardDesc}}</text>
     </view>
-    <view class="card-item card-item-1" wx:if="{{index===1}}" data-index="{{index}}" animation="{{animationData2}}" bindtap="clickfn" style="{{item.top}}" wx:for="{{cardList}}" wx:key="cardBgColor">
+    <view class="card-item card-item-1" wx:if="{{index===1}}" data-index="{{index}}" animation="{{animationData2}}" capture-catch:touchmove="moveCard" bind:tap="moveCard" style="{{item.top}}" wx:for="{{cardList}}" wx:key="cardBgColor">
       <image class="card-img" src="{{item.cardSrc}}" mode="" />
       <text class="card-title">{{item.cardTitle}}</text>
       <text class="card-desc" animation="{{animationData}}">{{item.cardDesc}}</text>
     </view>
-    <view class="card-item card-item-2" wx:if="{{index===2}}" data-index="{{index}}" animation="{{animationData3}}" bindtap="clickfn" style="{{item.top}}" wx:for="{{cardList}}" wx:key="cardBgColor">
+    <view class="card-item card-item-2" wx:if="{{index===2}}" data-index="{{index}}" animation="{{animationData3}}" capture-catch:touchmove="moveCard" bind:tap="moveCard" style="{{item.top}}" wx:for="{{cardList}}" wx:key="cardBgColor">
       <image class="card-img" src="{{item.cardSrc}}" mode="" />
       <text class="card-title">{{item.cardTitle}}</text>
       <text class="card-desc" animation="{{animationData}}">{{item.cardDesc}}</text>

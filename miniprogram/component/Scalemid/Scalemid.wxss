@@ -1,17 +1,25 @@
-image {
-  width: 100vw;
-  height: 100vh;
-  // border: 1px solid red;
+.close-icon {
+  position: absolute;
+  z-index: 99999;
+  top: 15px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
 }
 
 .log-list {
   position: absolute;
+  z-index: 999;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.log-list-view {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
 }
 
 .log-imga {
@@ -31,11 +39,22 @@ image {
 .log-imgc {
   width: 201.924px;
   height: 18.7px;
+  flex-shrink: 0;
+}
+
+.explore {
+  color: white;
+  width: 70%;
+  height: 50px;
+  background: #fb8c00;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 30px;
 }
 
 .animation-box {
   position: absolute;
-  // top: 0px;
+  top: 0;
   width: 100vw;
   height: 100vh;
   z-index: 99999;

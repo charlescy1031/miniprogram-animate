@@ -1,2 +1,5 @@
 <!--component/Claimprize.wxml-->
-<text>component/Claimprize.wxml</text>
+<view class="prize-box" catch:longpress="claimprizeFn" capture-catch:touchend="touchEnd">
+    <view class="prize-text" style="{{quiver}}"><text style="{{color}}">{{prizeText}}</text></view>
+    <view class="prize-bg" style="{{myClassStyleLeft}}"></view>
+</view>

@@ -35,7 +35,7 @@ Component({
      */
 
     methods: {
-        onLoad(option: any) {
+        onLoad(option) {
             // console.log(option.query);
             // wx.reLaunch({
             //     url: 'test?id=1'

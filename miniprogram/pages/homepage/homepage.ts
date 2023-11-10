@@ -1,7 +1,7 @@
 // index.ts
 Page({
     data: {
-        index: 5,
+        index: 6,
         array: ['46-1', '45', '35', '46-2', '46-3', '47-1', '47-2'],
     },
     onShow: function () {

@@ -1,12 +1,6 @@
-image {
-  width: 100vw;
-  height: 100vh;
-  // border: 1px solid red;
-}
-
-.close-icon {
+.close-icon-outin {
   position: absolute;
-  z-index: 99999;
+  z-index: 999;
   top: 15px;
   right: 15px;
   width: 20px;
@@ -15,22 +9,21 @@ image {
 
 .log-list {
   position: absolute;
-  // top: 120px;
   z-index: 999;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  &-s {
-    width: 80vw;
-    height: 55vh;
-    flex-direction: column;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.log-list-s {
+  width: 80vw;
+  height: 55vh;
+  flex-direction: column;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .log-list-view {
@@ -77,18 +70,18 @@ image {
   top: 0;
   width: 100vw;
   height: 100vh;
+}
 
-  &-b {
-    position: absolute;
-    left: 10vw;
-    top: 180px;
-    width: 80vw;
-    height: 55vh;
-    border-radius: 10px;
+.animation-box-b {
+  position: absolute;
+  left: 10vw;
+  top: 180px;
+  width: 80vw;
+  height: 55vh;
+  border-radius: 10px;
+}
 
-    .image-bg {
-      width: 80vw;
-      height: 60vh;
-    }
-  }
+.animation-box>.image-bg {
+  width: 80vw;
+  height: 60vh;
 }

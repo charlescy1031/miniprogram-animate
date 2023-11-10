@@ -1,0 +1,189 @@
+/**index.wxss**/
+.page {
+    padding-bottom: 98px;
+}
+
+.prizedraw {
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.containers {
+    position: absolute;
+    top: 40px;
+    width: calc(100% - 30px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 0 15px;
+}
+
+.title {
+    color: #000;
+    font-family: PingFang SC;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: center;
+    margin: 30px 0 25px 0;
+    /* 145.455% */
+}
+
+.rectange {
+    width: 97px;
+    height: 90px;
+    position: relative;
+    z-index: 999;
+}
+
+.prizedraw-box {
+    position: relative;
+    z-index: 99;
+}
+
+.arrow {
+    position: absolute;
+    width: 16px;
+    height: 15px;
+}
+
+.arrow-left {
+    left: 0;
+    top: 40%;
+}
+
+.arrow-right {
+    right: 0;
+    top: 40%;
+}
+
+
+
+.listbox {
+    display: flex;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    width: 100%;
+    justify-content: space-evenly;
+    height: 87px;
+    overflow-y: hidden;
+}
+
+.imglist {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+
+}
+
+.imglist-item {
+    width: 25px;
+    margin: 16px 0;
+    height: 58px;
+}
+
+.Prize {}
+
+.Prize-title2 {
+    text-align: center;
+}
+
+.Prize-box {
+    display: flex;
+    justify-content: center;
+}
+
+.Prize-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 12px;
+}
+
+.Prize-picture {
+    width: 53px;
+    height: 53px;
+    border-radius: 35.81px;
+}
+
+.Prize-text {
+    font-size: 14px;
+    line-height: 32px;
+}
+
+.Prize-share {
+    position: relative;
+    text-align: center;
+    width: 273px;
+    height: 51px;
+    border-radius: 51px;
+    border-width: 1px;
+    border: 1px solid #000;
+    margin: 0 auto;
+}
+
+.Prize-share>text {
+    text-align: center;
+    line-height: 51px;
+}
+
+.Prize-rule {
+    margin: 14px 20px;
+    padding: 14px 20px;
+    border: 1px solid #ccc;
+}
+
+.Prize-rule-title {
+    display: flex;
+    width: 86px;
+    height: 21px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.Prize-rule-desc {
+    color: #999;
+    font-family: PingFang SC;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 175%;
+    /* 21px */
+    letter-spacing: 1.44px;
+}
+
+
+.Prize-control {
+    position: fixed;
+    bottom: 55px;
+    width: 100%;
+}
+
+.Prize-control-box {
+    height: 46px;
+    width: 95%;
+    background: #000;
+    border-radius: 23px;
+    line-height: 46px;
+    text-align: center;
+    margin: 0 auto
+}
+
+text {
+    color: #FFF;
+    text-align: center;
+    font-family: PingFang SC;
+    font-size: 16px;
+    line-height: 46px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

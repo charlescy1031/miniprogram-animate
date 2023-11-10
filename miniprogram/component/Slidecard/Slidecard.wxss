@@ -1,0 +1,57 @@
+/**index.wxss**/
+.card {}
+
+.card-list {
+  position: relative;
+  /* top: 0; */
+}
+
+.card-item {
+  position: absolute;
+  width: 100vw;
+  height: 335px;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #fff;
+}
+
+.card-item-0 {
+  background: #AC4141;
+}
+
+.card-item-1 {
+  top: 335px;
+  background: #8F5454;
+}
+
+.card-item-2 {
+  top: 485px;
+  background: #832F29;
+}
+
+
+.card-img {
+  width: 209px;
+  height: 104px;
+  margin: 0 auto;
+}
+
+.card-title {
+  font-family: PingFang SC;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.card-desc {
+  font-family: PingFang SC;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: center;
+}

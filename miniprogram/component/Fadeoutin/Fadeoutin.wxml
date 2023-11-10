@@ -1,21 +1,21 @@
 <view>
-    <view class="animation-box" wx:if="{{showScreen}}" bindtap="clickfn" animation="{{animationData1}}" style="background:url(https://gd-hbimg.huaban.com/ed2daada74197bdebb8de43b4c74cb741fbe0d63c02bd-WZpvUw);background-size: 100%;">
+    <view class="animation-box" wx:if="{{showScreen}}" capture-catch:touchstart="startFn"  capture-catch:touchmove="scaleFn"  animation="{{animationData1}}" style="background:url(https://gd-hbimg.huaban.com/ed2daada74197bdebb8de43b4c74cb741fbe0d63c02bd-WZpvUw);background-size: 100%;">
         <view class="container log-list" bindtap="clickfn">
             <view class="log-list-view">
-                <image class="log-imga" src="/image/46-1/Vectora.svg" />
-                <image class="log-imgb" src="/image/46-1/Vectorb.svg" />
-                <image class="log-imgc" src="/image/46-1/Vectorc.svg" />
+                <image class="log-imga" src="/images/46-1/Vectora.svg" />
+                <image class="log-imgb" src="/images/46-1/Vectorb.svg" />
+                <image class="log-imgc" src="/images/46-1/Vectorc.svg" />
             </view>
         </view>
     </view>
 
     <view class="animation-box-b" animation="{{animationData2}}" wx:if="{{showBanner}}" style="background:url(https://gd-hbimg.huaban.com/ed2daada74197bdebb8de43b4c74cb741fbe0d63c02bd-WZpvUw);background-size: 100% 100%;">
-        <image class="close-icon" bindtap="closefn" src="/image/46-2/white-close.png" mode="" />
+        <image class="close-icon-outin" bindtap="closefn" src="/images/46-2/white-close.png" mode="" />
         <view class=" log-list-s">
             <view class="log-list-view">
-                <image class="log-imga" src="/image/46-1/Vectora.svg" />
-                <image class="log-imgb" src="/image/46-1/Vectorb.svg" />
-                <image class="log-imgc" src="/image/46-1/Vectorc.svg" />
+                <image class="log-imga" src="/images/46-1/Vectora.svg" />
+                <image class="log-imgb" src="/images/46-1/Vectorb.svg" />
+                <image class="log-imgc" src="/images/46-1/Vectorc.svg" />
             </view>
             <text class="explore">开始探索</text>
         </view>

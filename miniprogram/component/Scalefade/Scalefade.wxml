@@ -1,11 +1,7 @@
-
-   
-    <view class="animation-box" animation="{{animationData}}" style="{{myClassStyle}}background:url(https://gd-hbimg.huaban.com/ed2daada74197bdebb8de43b4c74cb741fbe0d63c02bd-WZpvUw);background-size: 100%;">
-        <view class="container log-list" bindtap="clickfn"  >
-            <image class="log-imga" style="{{myClassStyle_text}}" src="/image/46-1/Vectora.svg" />
-            <image class="log-imgb" style="{{myClassStyle_text}}" src="/image/46-1/Vectorb.svg" />
-            <image class="log-imgc" style="{{myClassStyle_text}}" src="/image/46-1/Vectorc.svg" />
-        </view>
+<view class="animation-box" capture-catch:touchstart="startFn"  capture-catch:touchmove="scaleFn"  animation="{{animationData}}" style="{{myClassStyle}}background:url(https://gd-hbimg.huaban.com/ed2daada74197bdebb8de43b4c74cb741fbe0d63c02bd-WZpvUw);background-size: 100%;">
+    <view class="container log-list">
+        <image class="log-imga" style="{{myClassStyle_text}}" src="/images/46-1/Vectora.svg" />
+        <image class="log-imgb" style="{{myClassStyle_text}}" src="/images/46-1/Vectorb.svg" />
+        <image class="log-imgc" style="{{myClassStyle_text}}" src="/images/46-1/Vectorc.svg" />
     </view>
-  
-
+</view>

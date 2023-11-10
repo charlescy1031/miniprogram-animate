@@ -20,7 +20,7 @@ Component({
     attached() {
     },
     methods: {
-        switchTab(e: any) {
+        switchTab() {
             const data = e.currentTarget.dataset
             const url = data.path
             wx.switchTab({ url })

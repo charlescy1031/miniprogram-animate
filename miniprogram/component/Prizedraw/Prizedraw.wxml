@@ -1,14 +1,14 @@
 <view class="page">
-    <view class="title" >
+    <view class="title">
         <text>幸运大抽奖</text>
     </view>
     <view class="prizedraw">
         <view class="container">
             <view class="prizedraw-box">
-                <image class="arrow arrow-left" src="/image/45/Polygon10.svg" mode="" />
-                <image class="rectange" src="/image/45/Rectangle4626.svg" mode="" />
+                <image class="arrow arrow-left" src="/images/45/Polygon10.svg" mode="" />
+                <image class="rectange" src="/images/45/Rectangle4626.svg" mode="" />
                 <view class="listbox">
-                    <view class="imglist" style="{{myClassStyleA}}">
+                    <view class="imglist" animation="{{animationDataA}}" style="{{myClassStyleA}}">
                         <image class="imglist-item" wx:for="{{imageList}}" wx:key="unique" src="{{item}}" mode="" />
                     </view>
                 </view>
@@ -16,19 +16,19 @@
             </view>
 
             <view class="prizedraw-box">
-                <image class="rectange" src="/image/45/Rectangle4626.svg" mode="" />
+                <image class="rectange" src="/images/45/Rectangle4626.svg" mode="" />
                 <view class="listbox">
-                    <view class="imglist" style="{{myClassStyleB}}">
+                    <view class="imglist" animation="{{animationDataB}}" style="{{myClassStyleB}}">
                         <image class="imglist-item" wx:for="{{imageList}}" wx:key="unique" src="{{item}}" mode="" />
                     </view>
                 </view>
             </view>
 
             <view class="prizedraw-box">
-                <image class="arrow arrow-right" src="/image/45/Polygon11.svg" mode="" />
-                <image class="rectange" src="/image/45/Rectangle4626.svg" mode="" />
+                <image class="arrow arrow-right" src="/images/45/Polygon11.svg" mode="" />
+                <image class="rectange" src="/images/45/Rectangle4626.svg" mode="" />
                 <view class="listbox">
-                    <view class="imglist" style="{{myClassStyleC}}">
+                    <view class="imglist" animation="{{animationDataC}}" style="{{myClassStyleC}}">
                         <image class="imglist-item" wx:for="{{imageList}}" wx:key="unique" src="{{item}}" mode="" />
                     </view>
                 </view>
@@ -40,7 +40,7 @@
     </view>
     <view class="Prize-title2">奖池</view>
 
-
+    <!-- 
     <view class="Prize-box">
         <view class="Prize-item" wx:for="{{lists}}" wx:key="text">
             <image class="Prize-picture" src="{{item.src}}" mode="" />
@@ -49,12 +49,13 @@
     </view>
     <view class="Prize-share">
         <text>分享</text>
-        <!-- <image src="/image/45/Rectangle1622.svg" mode="" /> -->
+       
     </view>
     <view class="Prize-rule">
         <text class="Prize-rule-title">活动规则</text>
         <text class="Prize-rule-desc">“Glenmorangie”一词在苏格兰盖尔语中有“宁静山谷”的含义，而格兰杰蒸馏厂从容不迫、一丝不苟的酿酒过程也印证了此意。格兰杰蒸馏厂配备了八个壶式蒸馏器，其中四个为12,500公升的初馏机（Wash Still），而另外四个则是8,000公升的再馏机（Spirit Still）。酒厂酿酒工作由比尔‧梁思敦博士（Dr Bill Lumsden）带领的团队担任，他们被亲切地称为泰恩人（The Men of Tain）。泰恩人会从格兰杰上方的泰洛希涌泉（Tarlogie Spring）取水，泰洛希涌泉丰富的矿物质赋予了格兰杰威士忌与众不同的风味。</text>
     </view>
+     -->
     <view class="Prize-control" bindtap="prizedraw">
         <view class="Prize-control-box">
             <text>立即抽奖</text>

@@ -3,7 +3,19 @@
 
 Page({
 	data: {
-		lists: [{ src: "/image/45/Media.png", text: "酒伴50ml" }, { src: "/image/45/Media.png", text: "威士忌杯" }, { src: "/image/45/Media.png", text: "杯垫" }, { src: "/image/45/Media.png", text: "试饮券" }],
+		lists: [{
+			src: "/image/45/Media.png",
+			text: "酒伴50ml"
+		}, {
+			src: "/image/45/Media.png",
+			text: "威士忌杯"
+		}, {
+			src: "/image/45/Media.png",
+			text: "杯垫"
+		}, {
+			src: "/image/45/Media.png",
+			text: "试饮券"
+		}],
 		imageList: [
 			"https://gd-hbimg.huaban.com/1484e1af72838c64e34329eb8896daa36efcb14414a8f5-noKHB7_fw480webp",
 			"https://gd-hbimg.huaban.com/ffc57689f394976f171e9a8a00acd6411496f4952c837c-MRwmJg_fw480webp",
@@ -62,78 +74,68 @@ Page({
 	},
 	prizedraw() {
 		// 抽奖函数
-		// const query = wx.createSelectorQuery();
-		// const element = query.select('.imglist')
-		let countfast = 0, countslow = 0
-		let countslowInterval = setInterval(() => {
-			countslow += -65
-			this.setData({
-				myClassStyleA: `margin-top:${countslow}px;`,
-				myClassStyleC: `margin-top:${countslow}px;`,
-			})
-			if (countslow < -2880) {
-				clearInterval(countslowInterval)
-				this.setData({
-					regulateNumberA: Math.floor(Math.random() * -90),
-					regulateNumberC: Math.floor(Math.random() * -90)
-				})
-				this.setData({
-					realScrollA: this.gettrueNumber() + this.data.regulateNumberA,
-					realScrollC: this.gettrueNumber() + this.data.regulateNumberC,
-					myClassStyleA: `margin-top:${this.data.realScrollA}px;`,
-					myClassStyleC: `margin-top:${this.data.realScrollC}px;`,
-				})
-				this.contrustorInterval('A', this.data.realScrollA, this.data.regulateNumberA)
-				this.contrustorInterval('C', this.data.realScrollC, this.data.regulateNumberC)
-			}
-		}, 40)
-		let countfastInterval = setInterval(() => {
-			countfast += -25
-			this.setData({
-				myClassStyleB: `margin-top:${countfast}px;`,
-			})
-			if (countslow < -2880) {
-				clearInterval(countfastInterval)
-				this.setData({
-					regulateNumberB: Math.floor(Math.random() * -90),
-				})
-				this.setData({
-					realScrollB: this.gettrueNumber() + this.data.regulateNumberB,
-					myClassStyleB: `margin-top:${this.data.realScrollB}px;`,
-				})
-				this.contrustorInterval('B', this.data.realScrollB, this.data.regulateNumberB)
-			}
-		}, 20)
-	},
-	contrustorInterval(type: any, realScroll: number, regulateNumber: number) {
-		// 抽奖卡偏移量回归函数
-		let differencrValue = Math.abs(regulateNumber)
-		let count = 0
-		let backPositionFn = setInterval(() => {
-			if (count < differencrValue) {
-				if (type === 'A') {
-					this.setData({
-						myClassStyleA: `margin-top:${realScroll + count}px;`,
-					})
-				} else if (type === 'B') {
-					this.setData({
-						myClassStyleB: `margin-top:${realScroll + count}px;`,
-					})
-				} else {
-					this.setData({
-						myClassStyleC: `margin-top:${realScroll + count}px;`,
-					})
-				}
-				count++
-			} else {
-				clearInterval(backPositionFn)
-			}
-		}, 10)
-	},
-	gettrueNumber(): number {
-		// 随机数量函数
-		let a = Math.floor(Math.random() * 10) * -90;
-		return a < -630 ? this.gettrueNumber() : a
-	},
+
+		let animationA = wx.createAnimation({
+			duration: 3500,
+			timingFunction: 'ease',
+			delay: 0,
+		})
+		let animationB = wx.createAnimation({
+			duration: 500,
+			timingFunction: 'ease',
+			delay: 0,
+		})
+		let animationC = wx.createAnimation({
+			duration: 3500,
+			timingFunction: 'ease',
+			delay: 0,
+		})
+		// 每次抽奖前恢复一次原来数据
+		animationA.translateY(0).step({
+			duration: 1
+		})
+		animationB.translateY(0).step({
+			duration: 1
+		})
+		animationC.translateY(0).step({
+			duration: 1
+		})
+		// 确定随机范围
+		let m = 20,
+			n = 15
+		// 实际随机数据
+		function suijishuFn() {
+			return -Math.floor(Math.random() * (m - n) + n) * 90 - 20
+		}
+		let a = suijishuFn()
+		let b = suijishuFn()
+		let C = suijishuFn()
+		// 随机移动距离
+		animationA.translateY(a).step({
+			duration: 3500
+		})
+		animationB.translateY(b).step({
+			duration: 4000
+		})
+		animationC.translateY(C).step({
+			duration: 3500
+		})
+		// 模拟回退
+		animationA.translateY(a + 20).step({
+			duration: 1000
+		})
+		animationB.translateY(b + 20).step({
+			duration: 1000
+		})
+		animationC.translateY(C + 20).step({
+			duration: 1000
+		})
+		// 导出动画
+		this.setData({
+			animationDataA: animationA.export(),
+			animationDataB: animationB.export(),
+			animationDataC: animationC.export()
+		})
+	}
 
 })
